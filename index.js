@@ -258,6 +258,7 @@ function nameFunc (func, name) {
 function populateConstructorExports (exports, codes, HttpError) {
   codes.forEach(function forEachCode (code) {
     var CodeError
+    if(!statuses.message) return; // No further execution when message are empty
     var name = toIdentifier(statuses.message[code])
 
     switch (codeClass(code)) {
